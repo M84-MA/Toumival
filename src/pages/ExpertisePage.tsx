@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { servicesData } from '../data/services';
 import type { ServiceItem } from '../types';
@@ -202,7 +202,6 @@ const ServiceDetailPanel: React.FC<{
 /* ─── MAIN PAGE ─────────────────────────────────────────────────────────── */
 export const ExpertisePage: React.FC = () => {
   const { language, t } = useLanguage();
-  const navigate = useNavigate();
 
   const [selectedCategory, setSelectedCategory] = useState<'all' | 'aluminium' | 'architecture' | 'glass'>('all');
   const [selectedService, setSelectedService]   = useState<ServiceItem | null>(null);
