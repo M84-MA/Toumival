@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #0B0B0B;
+    --text-primary: #F5F3EF;
+    --text-secondary: #A8A8A8;
+    --accent-gold: #C8B89A;
+    --surface-glass: rgba(255, 255, 255, 0.03);
+    --border-glass: rgba(255, 255, 255, 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Manrope', 'Outfit', system-ui, -apple-system, sans-serif;
+  }
+
+  html[lang="ar"] {
+    font-family: 'IBM Plex Sans Arabic', 'Tajawal', system-ui, sans-serif;
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 184, 154, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 184, 154, 0.6);
+}
+
+/* Custom Utility Classes */
+.font-arabic {
+  font-family: 'IBM Plex Sans Arabic', 'Tajawal', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Manrope', 'Outfit', sans-serif;
+}
+
+/* Glassmorphism card effects */
+.glass-panel {
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(28, 28, 28, 0.8);
+  border-color: rgba(200, 184, 154, 0.3);
+  transform: translateY(-4px);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #F5F3EF;
+  transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: #C8B89A;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 15px rgba(200, 184, 154, 0.15);
+}
+
+/* Hide horizontal scrollbars for clean galleries */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle image reveal zoom */
+.img-zoom-container {
+  overflow: hidden;
+}
+.img-zoom-container img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-zoom-container:hover img {
+  transform: scale(1.06);
+}
+
+/* Horizontal scrolling gallery snaps */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+}
+.scroll-snap-item {
+  scroll-snap-align: start;
+}
+
+/* RTL Helpers */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Fade-in animation (used for modals, panels, etc.) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Scale hover utility */
+.group:hover .group-hover\:scale-108 {
+  transform: scale(1.08);
+}
