@@ -10,7 +10,7 @@ interface FooterProps {
   onSelectService: (service: ServiceItem) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onSelectService }) => {
+export const Footer: React.FC<FooterProps> = ({ onSelectService: _onSelectService }) => {
   const { language, t } = useLanguage();
 
   const scrollToTop = () => {
